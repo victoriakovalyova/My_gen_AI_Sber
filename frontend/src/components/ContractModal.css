@@ -1,0 +1,281 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.contract-modal {
+  background: white;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  border-bottom: 2px solid #e8f4f0;
+  background: #f8f9fa;
+  border-radius: 12px 12px 0 0;
+}
+
+.modal-header h2 {
+  font-size: 22px;
+  color: #2c3e50;
+  font-weight: 600;
+  margin: 0;
+}
+
+.close-modal {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #6c757d;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.close-modal:hover {
+  background: #e9ecef;
+}
+
+.contract-form {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-section {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  background: #f8f9fa;
+}
+
+.form-section h3 {
+  margin: 0 0 20px 0;
+  color: #4a8e7c;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+.form-group.required label::after {
+  content: ' *';
+  color: #dc3545;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px 12px;
+  border: 2px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4a8e7c;
+  box-shadow: 0 0 0 3px rgba(74, 142, 124, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.file-upload-area {
+  margin-bottom: 15px;
+}
+
+.file-drop-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  border: 2px dashed #c9e0d9;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.file-drop-zone:hover {
+  border-color: #4a8e7c;
+  background: #f8f9fa;
+}
+
+.file-drop-zone i {
+  font-size: 32px;
+  color: #4a8e7c;
+  margin-bottom: 10px;
+}
+
+.file-drop-text {
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.attached-files {
+  margin-top: 15px;
+}
+
+.attached-files h4 {
+  margin: 0 0 10px 0;
+  color: #2c3e50;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.file-name {
+  flex: 1;
+  font-size: 14px;
+  color: #2c3e50;
+}
+
+.file-name i {
+  color: #4a8e7c;
+  margin-right: 8px;
+}
+
+.file-size {
+  font-size: 12px;
+  color: #6c757d;
+}
+
+.remove-file-btn {
+  background: none;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.remove-file-btn:hover {
+  background: #f8d7da;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid #dee2e6;
+}
+
+.btn-primary {
+  background: #4a8e7c;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:disabled {
+  background: #a0b6ad;
+  cursor: not-allowed;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #3a7666;
+}
+
+.btn-secondary {
+  background: white;
+  color: #6c757d;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: #f8f9fa;
+  border-color: #4a8e7c;
+  color: #4a8e7c;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .contract-modal {
+    margin: 10px;
+    max-width: none;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-header {
+    padding: 15px 20px;
+  }
+  
+  .contract-form {
+    padding: 20px;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+  }
+}

@@ -1,0 +1,56 @@
+services:
+  pgdb:
+    container_name: ${POSTGRES_HOST}
+    image: postgres:17
+    restart: always
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    env_file:
+      - backend/.env
+    volumes:
+      - postgres-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 1m
+      timeout: 10s
+      retries: 3
+
+  backend:
+    container_name: gen-ai-backend
+    build:
+      context: ./backend
+    image: gen-ai-backend
+    volumes:
+      - ./backend/app:/backend/app
+      - ./backend/logs:/backend/logs
+      - ./backend/tests:/backend/tests
+    env_file:
+      - backend/.env
+    depends_on:
+      pgdb:
+        condition: service_healthy
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    command: >
+      .venv/bin/uvicorn app.main:app
+      --host 0.0.0.0
+      --port 80
+
+  ingestor-app:
+    build:
+      context: ./ingestor
+    image: ingestor
+    container_name: ingestor-app
+    volumes:
+      - ./ingestor/app:/srv/app
+      - ./ingestor/logs:/srv/logs
+      - ./ingestor/tests:/srv/tests
+    ports:
+      - "81:80"
+    restart: unless-stopped
+    command: uvicorn app.main:app --host 0.0.0.0 --port 81 --reload
+
+
+volumes:
+  postgres-db:

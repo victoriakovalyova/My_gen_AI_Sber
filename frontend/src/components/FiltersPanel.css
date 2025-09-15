@@ -1,0 +1,81 @@
+.filters-panel {
+  grid-area: filters;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  display: none;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: end;
+}
+
+.filters-panel.active {
+  display: flex;
+  animation: slideDown 0.3s ease;
+}
+
+.filter-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #4a8e7c;
+  font-size: 14px;
+}
+
+.filter-input, .filter-select {
+  width: 90%;
+  padding: 12px 15px;
+  border: 2px solid #e8f4f0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.filter-input:focus, .filter-select:focus {
+  border-color: #4a8e7c;
+  box-shadow: 0 0 0 3px rgba(74, 142, 124, 0.1);
+  outline: none;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-apply {
+  background: #4a8e7c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-apply:hover {
+  background: #3a7666;
+}
+
+.btn-reset {
+  background: #f8f9fa;
+  color: #7f8c8d;
+  border: 1px solid #e8f4f0;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-reset:hover {
+  background: #e8f4f0;
+  color: #4a8e7c;
+}

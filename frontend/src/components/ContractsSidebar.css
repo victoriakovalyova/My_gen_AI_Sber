@@ -1,0 +1,112 @@
+.contracts-sidebar {
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  background: linear-gradient(to right, #4a8e7c, #3a7666);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 12px 12px 0 0;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.cards-container {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  background: #f8f9fa;
+}
+
+.contract-item-wrapper {
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.contract-item-wrapper:hover {
+  transform: translateY(-2px);
+}
+
+.edit-contract-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(74, 142, 124, 0.9);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 8px;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.2s ease;
+  z-index: 10;
+  font-size: 12px;
+}
+
+.edit-contract-btn:hover {
+  background: #3a7666;
+  transform: scale(1.1);
+}
+
+.contract-item-wrapper:hover .edit-contract-btn {
+  opacity: 1;
+}
+.contract-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.edit-btn {
+  background: #4a8e7c;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.edit-btn:hover {
+  background: #3a7666;
+}
+/* Адаптивность */
+@media (max-width: 768px) {
+  .sidebar-header {
+    padding: 12px 15px;
+    font-size: 16px;
+  }
+  
+  .cards-container {
+    padding: 10px;
+    gap: 15px;
+  }
+  
+  .edit-contract-btn {
+    top: 8px;
+    right: 8px;
+    padding: 5px 7px;
+    font-size: 11px;
+  }
+}

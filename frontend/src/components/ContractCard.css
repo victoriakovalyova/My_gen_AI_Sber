@@ -1,0 +1,137 @@
+.contract-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #e8f4f0;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.contract-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.contract-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.contract-card:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.contract-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #4a8e7c, #3a7666);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.contract-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  border-color: #c9e0d9;
+}
+
+.contract-card:hover::before {
+  opacity: 1;
+}
+
+.contract-card.expanded {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  border-color: #4a8e7c;
+  background: #f8fcfb;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #3a7666;
+  flex: 1;
+}
+
+.card-date {
+  font-size: 12px;
+  color: #7f8c8d;
+  white-space: nowrap;
+  margin-left: 10px;
+}
+
+.card-sum {
+  font-size: 18px;
+  font-weight: 700;
+  color: #4a8e7c;
+  margin-bottom: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.card-info {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  font-size: 14px;
+  color: #4a5568;
+  line-height: 1.5;
+}
+
+.contract-card:hover .card-info,
+.contract-card.expanded .card-info {
+  max-height: 200px;
+}
+
+.card-customer {
+  margin-top: 10px;
+  font-style: italic;
+  color: #7f8c8d;
+  font-size: 13px;
+}
+
+.card-status {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.status-active {
+  background: #e7f7ef;
+  color: #27ae60;
+  border: 1px solid #bcf0da;
+}
+
+.status-pending {
+  background: #fef5e7;
+  color: #e67e22;
+  border: 1px solid #fce3b5;
+}
+
+.status-completed {
+  background: #e7ecf7;
+  color: #6c5ce7;
+  border: 1px solid #c5d0f6;
+}
+
+.status-execution {
+  background: #e7f3f7;
+  color: #3498db;
+  border: 1px solid #b3e0f2;
+}
